@@ -1,0 +1,243 @@
+# RentalDB SCHEMA
+/*
+CREATE TABLE Landlord (
+
+
+
+LandlordID INT PRIMARY KEY,
+
+
+
+FirstName NVARCHAR(20) NOT NULL,
+
+
+
+LastName NVARCHAR(20) NOT NULL,
+
+
+
+Phone INT,
+
+
+
+Street NVARCHAR(50),
+
+
+
+City NVARCHAR(10) NOT NULL,
+
+
+
+State nvarchar(2) NOT NULL,
+
+
+
+Zip INT NOT NULL,
+
+
+
+email NVARCHAR(20) NOT NULL
+
+
+
+)
+
+
+
+
+
+
+
+
+CREATE TABLE Vendor (
+
+
+
+VendorID INT PRIMARY KEY,
+
+
+
+FirstName NVARCHAR(20) NOT NULL,
+
+
+
+LastName NVARCHAR(20) NOT NULL,
+
+
+
+Phone INT,
+
+
+
+Street NVARCHAR(10),
+
+
+
+City NVARCHAR(10) NOT NULL,
+
+
+
+State NVARCHAR(2) NOT NULL,
+
+
+
+Zip INT NOT NULL,
+
+
+
+Email NVARCHAR(20) NOT NULL,
+
+
+
+ServiceProvided NVarchar(20) NOT NULL)
+
+
+
+
+
+CREATE TABLE Maintenance_Request (
+
+
+
+RequestID INT PRIMARY KEY,
+
+
+
+RequestType NVARCHAR,
+
+
+
+RequestDate NVARCHAR,
+Date date not null,
+VendorID int not null,
+PropertyID int not null
+)
+
+
+
+
+
+CREATE TABLE Tenant (
+
+
+
+TenantID INT PRIMARY KEY,
+
+
+
+FirstName NVARCHAR(20) NOT NULL,
+
+
+
+LastName NVARCHAR(20) NOT NULL,
+
+
+
+Phone INT NOT NULL,
+
+
+
+NumberofLatePayment int,
+
+
+
+PropertyID int
+
+
+
+)
+
+
+
+
+
+CREATE TABLE Property(
+
+
+
+PropertyID INT PRIMARY KEY,
+
+
+
+HouseNo int not null,
+
+
+
+Street NVARCHAR(20),
+
+
+
+City NVARCHAR(20) NOT NULL,
+
+
+
+State NVARCHAR(20) NOT NULL,
+
+
+
+Zip INT NOT NULL,
+
+
+
+LandlordID int not null
+)
+
+
+
+
+
+CREATE TABLE Inspection(
+
+
+
+InspectID INT PRIMARY KEY,
+
+
+
+TenantName nvarchar(20) not null,
+
+
+
+Type nvarchar(20) not null,
+
+
+
+Photo image NOT NULL,
+
+
+
+PropertyID int not null,
+
+
+
+TenantID int not null
+
+
+
+)
+
+
+
+
+
+CREATE TABLE Rent_Payment(
+
+
+
+PaymentID INT PRIMARY KEY,
+
+
+
+PaymentDate date NOT NULL,
+
+
+
+TenantID int not null,
+
+
+
+PropertyID int not null
+
+
+
+)/*
